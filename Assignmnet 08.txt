@@ -1,0 +1,249 @@
+
+// 1. Write a ts program to read and print elements of array.
+
+var array= ["first element",1,2,3,4,"last element"]
+
+for (let index = 0; index < array.length; index++) {
+    console.log(array[index]) ;
+
+}
+
+// 2. Write a ts program to print all negative elements in an array.
+
+var array= ["first element",1,-2,-3,4,"last element"]
+
+for (let index = 0; index < array.length; index++) {
+    if(array[index]<0) {
+      console.log(array[index])
+    }
+
+}
+
+// 3. Write a ts program to find sum of all array elements. 
+
+var array= [1,2,-3,4]
+var sum:number=0;
+
+for (let index = 0; index < array.length; index++) {
+    sum = sum + array[index];   
+}
+console.log("sum = " + sum)
+
+// 4. Write a ts program to find maximum and minimum element in an array.
+
+// for minimum
+var array= [1,2,-3,4]
+var min:number = array[1];
+
+for (let index = 0; index < array.length; index++) {
+     if (min>array[index]){
+      min=array[index];
+     }
+}
+console.log(min)
+// for maximum
+var array= [1,2,-3,4]
+var max:number = array[1];
+
+for (let index = 0; index < array.length; index++) {
+     if (max<array[index]){
+      max=array[index];
+     }
+}
+console.log(max)
+
+// 5. Write a ts program to find second largest element in an array.
+var array= [3,6,4,1,8,9,2];
+array.sort().reverse();
+console.log(array[1])
+
+
+// 6. Write a ts program to count total number of even and odd elements in an array.
+
+var array= [1,2,3,4,5,7,9]
+var sumOfEven:number=0;
+var sumOfOdd:number=0;
+for (let index = 0; index < array.length; index++) {
+  if(array[index]%2==0){
+    sumOfEven = sumOfEven + 1;
+  }
+  else{
+    sumOfOdd = sumOfOdd+ 1;
+  }
+
+}
+console.log("number of evens = " + sumOfEven);
+console.log("number of odds = " + sumOfOdd);
+
+// 7. Write a ts program to count total number of negative elements in an array.
+
+var array= ["first element",1,-2,-3,4,"last element"]
+
+var sum:number = 0;
+
+for (let index = 0; index < array.length; index++) {
+    if(array[index]<0) {
+      sum++;
+    }
+}
+console.log("Negative Numbers = " + sum)
+
+// 8. Write a ts program to copy all elements from an array to another array.
+
+var firstArray= ["first element",1,-2,-3,4,"last element"]
+var secondArray:any = [9,9];
+
+for (let index = 0; index < firstArray.length; index++) {
+
+     secondArray.push(firstArray[index]);
+ }
+
+ console.log(secondArray)
+
+//  9. Write a ts program to insert an element in an array.
+var firstArray= ["first element",1,-2,-3,4,"last element"]
+     firstArray.push(8);
+ console.log(firstArray)
+
+// 10. Write a ts program to delete an element from an array at specified position.
+var firstArray= ["first element",1,-2,-3,4,"last element"]
+  //just write the index of element at the place of 5
+firstArray.splice(5,0)   
+ console.log(firstArray)
+
+// 11. Write a ts program to count frequency of each element in an array.
+
+var array = [1, 1, -2, -3, 4, -3, -3]
+var countfreq = 0;
+function numberFrequency(num: number) {
+
+    for (let index = 0; index < array.length; index++) {
+        if (num == array[index]) {
+            countfreq++;
+        }
+    }
+    console.log(countfreq)
+}
+var frequency = numberFrequency(1)
+
+// 12. Write a ts program to print all unique elements in the array.
+
+var array = [1, 1, -2, -3, 4, -3, -3]
+
+let newArray = array.filter((element, index, array) => array.indexOf(element) === index);
+console.log(newArray);
+
+// 13. Write a ts program to count total number of duplicate elements in an array.
+
+const arr = ["a", "b", "a", "c", "d", "e", "b", "c", "f", "g", "h", "h", "h", "e", "a"]
+var sum =0;
+const counts = {};
+arr.forEach((x) => {
+    counts[x] = (counts[x] || 0) + 1;
+    if (counts[x]>1 && counts[x]<3) {
+        sum++;
+    }
+
+});
+console.log(counts)
+console.log("Total numbers which has been duplicated = " + sum)
+
+// 14. Write a ts program to delete all duplicate elements from an array.
+var array = [1, 1, -2, -3, 4, -3, -3]
+
+let newArray = array.filter((element, index, array) => array.indexOf(element) === index);
+console.log(newArray);
+
+// 15. Write a ts program to merge two array to third array.
+
+var firstArray = [1,1]
+var secondArray= [2,2]
+var thirdArray = [3,3]
+for (let index = 0; index < firstArray.length; index++) {
+
+     secondArray.push(firstArray[index]);
+ }
+ for (let index = 0; index < secondArray.length; index++) {
+
+    thirdArray.push(secondArray[index]);
+}
+ console.log(thirdArray)
+
+// 16. Write a ts program to find reverse of an array.
+
+var array = [1, 1, -2, -3, 4, -3, -3]
+console.log(array.reverse());
+
+// 17. Write a ts program to put even and odd elements of array in two separate array.
+
+var firstArray = [1,2,3,4,5,6]
+var secondArray= []
+var thirdArray = []
+
+for (let index = 0; index < firstArray.length; index++) {
+    if (firstArray[index]%2==0) {
+        secondArray.push(firstArray[index]);
+    }
+    else{
+        thirdArray.push(firstArray[index]);
+    }
+
+ }
+ console.log(secondArray)
+ console.log(thirdArray)
+
+// 18. Write a ts program to search an element in an array.
+
+var array = [1, 1, -2, -3, 4, -3, -3]
+
+function search(num: number) {
+
+    for (let index = 0; index < array.length; index++) {
+        if (num == array[index]) {
+            return true;
+        }
+        else {
+            return false
+        }
+    }
+
+}
+var searchNum = search(1)
+
+console.log(searchNum);
+
+// 19. Write a ts program to sort array elements in ascending or descending order.
+var array = [5,7,2,9,1]
+console.log(array.sort());
+
+var array = [5,7,2,9,1]
+console.log(array.sort().reverse());
+
+// 20. Write a ts program to sort even and odd elements of array separately.
+var firstArray = [1,2,3,4,5,6]
+var secondArray= []
+var thirdArray = []
+
+for (let index = 0; index < firstArray.length; index++) {
+    if (firstArray[index]%2==0) {
+        secondArray.push(firstArray[index]);
+    }
+    else{
+        thirdArray.push(firstArray[index]);
+    }
+
+ }
+ console.log(secondArray.sort())
+ console.log(thirdArray.sort())
+
+// 21. Write a ts program to left rotate an array.
+var array = [1,2,3,4,5]
+var firstElement = array.shift()
+array.push(firstElement)
+console.log(array)
+
+// 22. Write a ts program to right rotate an array.
+var array = [1,2,3,4,5]
+var firstElement = array.pop()
+array.unshift(firstElement)
+console.log(array)
